@@ -10,17 +10,20 @@ import { map } from 'rxjs/operators';
 })
 export class ArtistComponent implements OnInit {
 
-  constructor(private activatedRoute:ActivatedRoute,
-               public _spotify:SpotifyService)
-  {
+   artista:any = {};
 
-  }
+  constructor(private activatedRoute:ActivatedRoute,
+               public _spotify:SpotifyService) { }
 
   ngOnInit() {
      this.activatedRoute.params
          .pipe(map(params => params['id']))
          .subscribe(id =>{
                console.log(id);
+               this._spotify.getArtista(id).subscribe(artista=>{
+                  console.log(artista);
+                  this.artista = artista;
+               });
      });
   }
 
