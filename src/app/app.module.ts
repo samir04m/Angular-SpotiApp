@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { app_routing } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 // Services
 import { SpotifyService } from './services/spotify.service';
@@ -24,7 +25,8 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
     BrowserModule,
     AppRoutingModule,
     app_routing,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
      SpotifyService
