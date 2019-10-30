@@ -2,6 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { app_routing } from './app.routes';
+import { HttpClientModule } from '@angular/common/http';
+
+// Services
+import { SpotifyService } from './services/spotify.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,9 +23,12 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    app_routing
+    app_routing,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+     SpotifyService
+ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
