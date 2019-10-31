@@ -11,6 +11,7 @@ import { map } from 'rxjs/operators';
 export class ArtistComponent implements OnInit {
 
    artista:any = {};
+   pistas:any = [];
 
   constructor(private activatedRoute:ActivatedRoute,
                public _spotify:SpotifyService) { }
@@ -23,6 +24,13 @@ export class ArtistComponent implements OnInit {
                this._spotify.getArtista(id).subscribe(artista=>{
                   console.log(artista);
                   this.artista = artista;
+               });
+
+               this._spotify.getTop(id)
+                  .pipe(map((resp:any) => resp.tracks))
+                  .subscribe(pistas=>{
+                     this.pistas = pistas;
+                     console.log(pistas);
                });
      });
   }

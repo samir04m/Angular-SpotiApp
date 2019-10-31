@@ -11,7 +11,7 @@ export class SpotifyService {
 
    urlSpotify:string = 'https://api.spotify.com/v1/';
 
-   token:string = "BQDm2spZmAo3VQOcBZcw9uhzjFoUtPB7ArvW95d3yKO_hEbUOZbVMcK1oI5L7skin_xbRxahKDuV582zkvw";
+   token:string =  "BQCJAxbzQmjFeyhuirBU-97JqggbMfGwz0JHlyE6eT1oJEOWczqWrURKMl3xCExUtH7gZ1chsf5a9LOeRz0";
 
   constructor(public http:HttpClient) {
      console.log("servicio de spotify listo para usar")
@@ -50,6 +50,15 @@ export class SpotifyService {
       //        return this.artistas;
       // }));
 
+   }
+
+   public getTop(id:string){
+
+      let url = `${ this.urlSpotify }artists/${ id }/top-tracks?country=US`;
+
+      let headers = this.getHeaders();
+
+      return this.http.get(url, {headers});
    }
 
 }
