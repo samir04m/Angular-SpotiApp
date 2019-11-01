@@ -11,7 +11,7 @@ export class SpotifyService {
 
    urlSpotify:string = 'https://api.spotify.com/v1/';
 
-   token:string =  "BQCJAxbzQmjFeyhuirBU-97JqggbMfGwz0JHlyE6eT1oJEOWczqWrURKMl3xCExUtH7gZ1chsf5a9LOeRz0";
+   token:string =  "BQBgVVLYv_M7CDramBJmnUqAWyn_QLSSMiiy0PuptUzWt5LvprXijBGZqDkkEgVzQo2lKrZMjl6RtG4842U";
 
   constructor(public http:HttpClient) {
      console.log("servicio de spotify listo para usar")
